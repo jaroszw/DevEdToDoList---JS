@@ -36,9 +36,9 @@ function addTodo(event) {
 
 function deleteCheck(e) {
   const item = e.target;
-  if (item.classList[0] === "trash-btn") {
-    const todo = item.parentElement;
+  const todo = item.parentElement;
 
+  if (item.classList[0] === "trash-btn") {
     todo.classList.add("fall");
     todo.addEventListener("transitionend", () => {
       todo.remove();
@@ -46,7 +46,6 @@ function deleteCheck(e) {
   }
 
   if (item.classList[0] === "complete-btn") {
-    const todo = item.parentElement;
     todo.classList.toggle("completed");
   }
 }
@@ -68,6 +67,7 @@ function filterTodo(e) {
         } else {
           todo.style.display = "none";
         }
+        break;
 
       case "uncompleted":
         if (!todo.classList.contains("completed")) {
@@ -75,6 +75,7 @@ function filterTodo(e) {
         } else {
           todo.style.display = "none";
         }
+        break;
     }
   });
 }
