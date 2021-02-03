@@ -53,21 +53,23 @@ function deleteCheck(e) {
 
 function filterTodo(e) {
   const todos = todoList.childNodes;
+  console.log(e.target.value);
+  console.log(todos);
 
   todos.forEach((todo) => {
     switch (e.target.value) {
-      case "All":
+      case "all":
         todo.style.display = "flex";
         break;
 
-      case "Completed":
+      case "completed":
         if (todo.classList.contains("completed")) {
           todo.style.display = "flex";
         } else {
           todo.style.display = "none";
         }
 
-      case "Uncompleted":
+      case "uncompleted":
         if (!todo.classList.contains("completed")) {
           todo.style.display = "flex";
         } else {
